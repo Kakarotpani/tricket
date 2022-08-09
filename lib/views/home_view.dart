@@ -13,7 +13,7 @@ class HomeView extends StatelessWidget {
       body: Stack(      
         alignment: AlignmentDirectional.topCenter, 
         children:  [
-          Container(
+          Container(  // top container
             height: screenSize.height,
             width: screenSize.width,
             color: const Color.fromARGB(255, 67, 41, 162),
@@ -25,6 +25,7 @@ class HomeView extends StatelessWidget {
                     fontSize: 64,
                     fontWeight: FontWeight.w900,
                     color: Colors.white,
+                    fontFamily: 'MPLUSRounded1c'
                   ),
                 ),
                 Text("TRICKET",
@@ -39,7 +40,7 @@ class HomeView extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: Container(
+            child: Container(  // bottom container
               height: screenSize.height*0.65,
               width: screenSize.width,
               padding: const EdgeInsets.fromLTRB(36, 0, 36, 0),
@@ -55,8 +56,8 @@ class HomeView extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      Container(
-                        height: 50,
+                      Container(  // facebook login
+                        height: 50,                        
                         width: screenSize.width*3/4,
                         decoration: const BoxDecoration(
                           color: Colors.blue,
@@ -73,15 +74,13 @@ class HomeView extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Container(
+                      Container(  // gmail login
                         height: 50,
                         width: screenSize.width*3/4,
                         decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
-                          color: Colors.white,
                           border: Border.all(
-                            color: Colors.black,
-                            width: 2,
+                            color: Colors.grey,
+                            width: 1.0,
                           ),
                           borderRadius: const BorderRadius.all(
                             Radius.circular(10)
@@ -98,8 +97,7 @@ class HomeView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  // Divider
-                  Row(
+                  Row(  // Divider
                     children: const [
                       Expanded(
                         child: Divider(color: Colors.black,)
@@ -110,13 +108,12 @@ class HomeView extends StatelessWidget {
                       ),
                     ]
                   ),
-                  //form
-                  TextFormField(
+                  TextFormField(  //form
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       hintText: 'Enter your 10 digit Mobile No.',
                       labelText: 'Mobile Number',
-                      labelStyle: const TextStyle(color: Colors.black, fontSize: 20),
+                      labelStyle: const TextStyle(color: Colors.black, fontSize: 16),
                       border: OutlineInputBorder(
                         borderSide: const BorderSide(color: Colors.black),
                         borderRadius: BorderRadius.circular(5.0)
@@ -128,7 +125,7 @@ class HomeView extends StatelessWidget {
                     ),
                     onChanged: (value) {},
                   ),
-                  Column(
+                  Column(  // OTP btn
                     children: [
                       OutlinedButton(
                         onPressed: (){},
@@ -140,12 +137,12 @@ class HomeView extends StatelessWidget {
                         ),
                         style: OutlinedButton.styleFrom(
                           minimumSize: Size(screenSize.width*0.5, 44),
-                          backgroundColor:const Color.fromARGB(255, 198, 191, 191),
+                          backgroundColor:const Color.fromARGB(255, 195, 187, 187),
                           side: const BorderSide(color: Color.fromARGB(255, 198, 191, 191))
                         )
                       ),
                       const SizedBox(height: 10),
-                      OutlinedButton(
+                      OutlinedButton(  // skip btn
                         onPressed: (){},
                         child: const Text("Skip For Now",
                           style: TextStyle(
